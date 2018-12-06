@@ -44,4 +44,37 @@ function posted_by() {
 }
 endif;
 
-?>
+
+// サムネイルの表示
+if ( ! function_exists( 'post_thumbnail' ) ) :
+  function post_thumbnail() {
+    // if ( post_password_required() || is_attachment() || !   has_post_thumbnail() ) {
+    // 	return;
+    // }
+
+    if ( is_singular() ) :
+      ?>
+
+      <div class="post-thumbnail">
+        <?php if(has_post_thumbnail()): ?>
+          <?php the_post_thumbnail(); ?>
+        <?php else: ?>
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/sample.png" alt="no-image"></a>
+        <?php endif; ?>
+      </div>
+
+    <?php else : ?>
+
+    <a class="post-thumbnail" href="<?php the_permalink(); ?>"  aria-hidden="true" tabindex="-1">
+      <?php if(has_post_thumbnail()): ?>
+        <?php the_post_thumbnail(); ?>
+      <?php else: ?>
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/sample.png" alt="no-image"></a>
+      <?php endif; ?>
+    </a>
+
+    <?php
+    endif;
+  }
+
+endif;
