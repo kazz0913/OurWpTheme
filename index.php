@@ -7,7 +7,7 @@ if ( have_posts() ) :
     ?>
 
     <header>
-      <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+      <h1 class="page-title"><?php single_post_title(); ?></h1>
     </header>
     <?php
   endif;
@@ -21,13 +21,18 @@ if ( have_posts() ) :
         <h2>
           <a href="<?php the_permalink(); ?>"><?php esc_html(the_title()); ?></a>
         </h2>
+        <?php posted_on(); ?>
+        <?php posted_by(); ?>
       </header>
     </article>
 
     <?php
     endwhile;
 
-    the_posts_navigation();
+    the_posts_pagination( array(
+      'prev_text' => 'PREV',
+      'next_text' => 'NEXT'
+    ));
 
 else :
 
