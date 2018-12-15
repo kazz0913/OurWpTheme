@@ -23,4 +23,7 @@ if ( ! function_exists( 'theme_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'theme_setup' );
 
+
+require get_template_directory() . '/inc/template-tags.php';
+
 ?>
