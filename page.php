@@ -1,10 +1,25 @@
 <? get_header(); ?>
 
-<header class="pagesHero">
-  <div class="pagesHero_wrapper">
-    <h1 class="pagesHero_title"><?php the_title(); ?></h1>
-  </div>
+  <?php
+    if ( have_posts() ):
+      while ( have_posts() ):
+      the_post();
+    ?>
+    <header class="pageHeader">
+      <div class="pageHeader_wrapper">
+        <h1 class="pageHeader_title"><?php the_title(); ?></h1>
+      </div>
+    </header>
 
-</header>
+    <section class="pageContent">
+      <?php the_content(); ?>
+    </section>
+
+    <?php
+      endwhile;
+      else:
+        get_template_part( 'template-parts/content', 'none' );
+      endif;
+    ?>
 
 <? get_footer(); ?>
