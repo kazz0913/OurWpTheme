@@ -19,7 +19,7 @@ if ( have_posts() ) :
     <article id="<?php the_ID(); ?>" class="entry">
       <header>
         <h2>
-          <a href="<?php the_permalink(); ?>"><?php esc_html(the_title()); ?></a>
+          <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
         </h2>
         <?php posted_on(); ?>
         <?php posted_by(); ?>

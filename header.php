@@ -31,3 +31,4 @@
 <main id="main">
 
 <article id="content">
+<!-- スラッグ名をidに付与する案 -->

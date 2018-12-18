@@ -48,9 +48,9 @@ endif;
 // サムネイルの表示
 if ( ! function_exists( 'post_thumbnail' ) ) :
   function post_thumbnail() {
-    // if ( post_password_required() || is_attachment() || !   has_post_thumbnail() ) {
-    // 	return;
-    // }
+    if ( post_password_required() || is_attachment() ) {
+    	return;
+    }
 
     if ( is_singular() ) :
       ?>
