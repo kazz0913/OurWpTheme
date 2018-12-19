@@ -10,11 +10,11 @@
     <?php posted_on(); ?>
     <?php posted_by(); ?>
     <h1 class="singleHeader_title"><?php the_title(); ?></h1>
-    <!-- カテゴリー -->
-    <?php post_thumbnail(); ?> 
+    <p class="catList"><?php category_list(); ?></p>
+    <?php post_thumbnail(); ?>
   </header>
 
-  <section>
+  <section class="singleContent">
     <?php
       the_content() ;
     ?>
@@ -23,8 +23,18 @@
   <?php
     endwhile;
     else:
-      get_template_part( 'template-parts/content', 'none' );
+  ?>
+
+  <p>投稿が見つかりません。</p>
+
+  <?php
     endif;
   ?>
 
-<?php get_footer(); ?>
+</article>
+
+</main>
+
+<?
+	get_sidebar();
+	get_footer();

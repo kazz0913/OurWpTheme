@@ -1,5 +1,4 @@
-</article>
-</main>
+</div><!--container-end-->
 
 <footer class="footer">
   <div class="footer_wrapper">
