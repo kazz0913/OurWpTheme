@@ -1,4 +1,4 @@
-<? get_header(); ?>
+<?php get_header(); ?>
 
 <?php
 if ( have_posts() ) :
@@ -6,8 +6,10 @@ if ( have_posts() ) :
   if ( is_home() && ! is_front_page() ) :
     ?>
 
-    <header>
-      <h1 class="page-title"><?php single_post_title(); ?></h1>
+    <header class="pageHeader">
+      <div class="pageHeader_wrapper">
+        <h1 class="pageHeader_title"><?php single_post_title(); ?></h1>
+      </div>
     </header>
     <?php
   endif;
@@ -36,11 +38,17 @@ if ( have_posts() ) :
       'next_text' => 'NEXT'
     ));
 
-else :
+  else :
 
     get_template_part( 'template-parts/content', 'none' );
 
-endif;
+  endif;
 ?>
 
-<? get_footer(); ?>
+</article>
+
+</main>
+
+<?
+	get_sidebar();
+	get_footer();

@@ -1,18 +1,15 @@
-<?php get_header(); ?>
+<? get_header(); ?>
 
 <?php
-if ( have_posts() ) :
-
-  if ( is_home() && ! is_front_page() ) :
-    ?>
+	if ( have_posts() ) :
+  ?>
 
     <header class="pageHeader">
-      <div class="pageHeader_wrapper">
-        <h1 class="pageHeader_title"><?php single_post_title(); ?></h1>
-      </div>
+		  <div class="pageHeader_wrapper">
+        <h1 class="pageHeader_title"><?php the_archive_title(); ?></h1>
+		  </div>
     </header>
     <?php
-  endif;
 
     while ( have_posts() ) :
       the_post();
