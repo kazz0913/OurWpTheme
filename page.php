@@ -18,8 +18,18 @@
     <?php
       endwhile;
       else:
-        get_template_part( 'template-parts/content', 'none' );
+    ?>
+
+      <p>投稿が見つかりません。</p>
+
+    <?php
       endif;
     ?>
 
-<? get_footer(); ?>
+</article>
+
+</main>
+
+<?
+	get_sidebar();
+	get_footer();

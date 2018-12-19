@@ -1,10 +1,4 @@
-
-<section class="no-results not-found">
-  <header class="page-header">
-   <h1 class="page-title"><?php echo esc_html( '投稿が見つかりませんでした。' ); ?></h1>
-  </header><!-- .page-header -->
-
-  <div class="page-content">
+  <section class="noneContent">
   <?php
   if ( is_home() && current_user_can( 'publish_posts' ) ) :
 
@@ -29,12 +23,11 @@
 
   else :
   ?>
-
+    <!-- e.g 404 -->
     <p><?php echo esc_html( 'お探しのものが見つかりませんでした。以下の検索フォームから検索してみてください。' ); ?></p>
     <?php
     get_search_form();
 
   endif;
   ?>
-  </div><!-- .page-content -->
-</section><!-- .no-results -->
+  </section><!-- .noneContent -->

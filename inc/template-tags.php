@@ -52,7 +52,8 @@ if ( ! function_exists( 'post_thumbnail' ) ) :
     	return;
     }
 
-    if ( is_singular() ) :
+     if ( is_singular() ) :
+      // page or single ??
       ?>
 
       <div class="post-thumbnail">
