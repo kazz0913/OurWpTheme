@@ -52,19 +52,17 @@ if ( ! function_exists( 'post_thumbnail' ) ) :
     	return;
     }
 
-     if ( is_singular() ) :
-      // page or single ??
+    if ( is_singular() ) :
+      if( !has_post_thumbnail() ) :
+        return;
+      else:
       ?>
-
-      <div class="post-thumbnail">
-        <?php if(has_post_thumbnail()): ?>
+        <div class="post-thumbnail">
           <?php the_post_thumbnail(); ?>
-        <?php else: ?>
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/sample.png" alt="no-image"></a>
-        <?php endif; ?>
-      </div>
-
-    <?php else : ?>
+        </div>
+      <?php
+      endif;
+    else : ?>
 
     <a class="post-thumbnail" href="<?php the_permalink(); ?>"  aria-hidden="true" tabindex="-1">
       <?php if(has_post_thumbnail()): ?>
