@@ -1,8 +1,5 @@
 # VSCode
 .vscode
 
-# node-version
-.node-version
-
 # Dependency directories
 node_modules/
