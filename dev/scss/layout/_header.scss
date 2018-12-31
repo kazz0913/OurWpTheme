@@ -1,0 +1,28 @@
+
+.header {
+  background: $bgColor;
+  &_wrapper {
+    max-width: $maxwidth;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.headerPcNav {
+  &_menu {
+    display: flex;
+    li {
+      list-style: none;
+      & + li {
+        margin: 0 0 0 10px;
+      }
+    }
+  }
+}
+
+.headerSpNav {
+  display: none;
+}
+
