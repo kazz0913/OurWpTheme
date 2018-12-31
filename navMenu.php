@@ -20,6 +20,7 @@
   <?php wp_nav_menu(array(
     'theme_location' => 'header',
     'container' => false,
+    'menu_id' => 'menu-header',
     'menu_class' => 'headerPcNav_menu'
   )); ?>
 </nav>
